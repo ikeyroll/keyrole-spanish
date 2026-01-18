@@ -34,23 +34,23 @@ const WordCard: React.FC<WordCardProps> = ({
 
   if (viewMode === 'list') {
     return (
-      <div className={`flex items-center justify-between p-4 bg-white border rounded-xl transition-all hover:shadow-sm ${isLearned ? 'border-red-200 bg-red-50/30' : 'border-red-100'}`}>
+      <div className={`flex items-center justify-between p-4 bg-white border rounded-xl transition-all hover:shadow-sm ${isLearned ? 'border-yellow-300 bg-yellow-50/30' : 'border-yellow-200'}`}>
         <div className="flex items-center gap-6">
-          <div className="w-16 text-2xl font-bold spanish-font text-red-900">{word.spanish}</div>
+          <div className="w-16 text-2xl font-bold spanish-font text-yellow-900">{word.spanish}</div>
           <div className="flex flex-col">
             <span className="text-sm font-medium text-yellow-600">{word.transliteration}</span>
-            {word.malaysian && <span className="text-xs text-red-500 italic">MY: {word.malaysian}</span>}
+            {word.malaysian && <span className="text-xs text-yellow-600 italic">MY: {word.malaysian}</span>}
           </div>
-          <div className="text-red-800 font-medium">{word.meaning}</div>
+          <div className="text-yellow-800 font-medium">{word.meaning}</div>
         </div>
         
         <div className="flex items-center gap-2">
-          <button onClick={speak} className="p-2 text-red-400 hover:text-yellow-600 transition-colors">
+          <button onClick={speak} className="p-2 text-yellow-500 hover:text-yellow-700 transition-colors">
             <Volume2 size={18} />
           </button>
           <button 
             onClick={() => onToggleLearned(word.id)}
-            className={`p-2 transition-colors ${isLearned ? 'text-red-600' : 'text-gray-300 hover:text-red-500'}`}
+            className={`p-2 transition-colors ${isLearned ? 'text-yellow-600' : 'text-gray-300 hover:text-yellow-500'}`}
           >
             <CheckCircle size={20} fill={isLearned ? 'currentColor' : 'none'} />
           </button>
@@ -66,7 +66,7 @@ const WordCard: React.FC<WordCardProps> = ({
   }
 
   return (
-    <div className={`relative group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${isLearned ? 'bg-red-50 border-red-200' : 'bg-white border-red-100'}`}>
+    <div className={`relative group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${isLearned ? 'bg-yellow-50 border-yellow-300' : 'bg-white border-yellow-200'}`}>
       <div className="absolute top-4 right-4 flex gap-2">
          <button 
           onClick={() => onToggleFavorite(word.id)}
@@ -76,25 +76,25 @@ const WordCard: React.FC<WordCardProps> = ({
         </button>
         <button 
           onClick={() => onToggleLearned(word.id)}
-          className={`transition-colors ${isLearned ? 'text-red-600' : 'text-gray-300 group-hover:text-red-300'}`}
+          className={`transition-colors ${isLearned ? 'text-yellow-600' : 'text-gray-300 group-hover:text-yellow-400'}`}
         >
           <CheckCircle size={20} fill={isLearned ? 'currentColor' : 'none'} />
         </button>
       </div>
 
       <div className="flex flex-col items-center text-center space-y-3">
-        <span className="text-xs font-bold px-2 py-1 bg-red-100 text-red-700 rounded-full uppercase tracking-wider">{word.category}</span>
+        <span className="text-xs font-bold px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full uppercase tracking-wider">{word.category}</span>
         
-        <h2 className="text-4xl font-bold spanish-font text-red-900 cursor-pointer" onClick={speak}>{word.spanish}</h2>
+        <h2 className="text-4xl font-bold spanish-font text-yellow-900 cursor-pointer" onClick={speak}>{word.spanish}</h2>
         
         <div className="space-y-1">
           <p className="text-lg font-medium text-yellow-600">{word.transliteration}</p>
-          {word.malaysian && <p className="text-sm text-red-500 italic">MY: {word.malaysian}</p>}
+          {word.malaysian && <p className="text-sm text-yellow-600 italic">MY: {word.malaysian}</p>}
         </div>
 
-        <div className="w-full h-px bg-red-100 my-2"></div>
+        <div className="w-full h-px bg-yellow-200 my-2"></div>
         
-        <p className="text-lg text-red-800 font-semibold">{word.meaning}</p>
+        <p className="text-lg text-yellow-800 font-semibold">{word.meaning}</p>
         
         <div className="flex gap-4 pt-2">
           <button 

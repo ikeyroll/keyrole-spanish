@@ -54,16 +54,16 @@ const Quiz: React.FC<QuizProps> = ({ words, learnedIds, onClose }) => {
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl">
           <div className="text-center">
-            <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Trophy className="text-red-500" size={40} />
+            <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Trophy className="text-yellow-500" size={40} />
             </div>
-            <h2 className="text-2xl font-bold text-red-900 mb-2">No Words to Quiz</h2>
+            <h2 className="text-2xl font-bold text-yellow-900 mb-2">No Words to Quiz</h2>
             <p className="text-red-600 mb-6">
               You haven't marked any words as learned yet. Tick some words first to start the quiz!
             </p>
             <button
               onClick={onClose}
-              className="w-full bg-gradient-to-r from-red-600 to-yellow-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all"
+              className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all"
             >
               Got it!
             </button>
@@ -117,15 +117,15 @@ const Quiz: React.FC<QuizProps> = ({ words, learnedIds, onClose }) => {
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl">
           <div className="text-center">
-            <div className="w-24 h-24 bg-gradient-to-br from-red-600 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-red-300">
+            <div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-yellow-300">
               <Trophy className="text-white" size={48} />
             </div>
-            <h2 className="text-3xl font-bold text-red-900 mb-2">Quiz Complete!</h2>
-            <p className="text-red-600 mb-6">Great job on completing the quiz!</p>
+            <h2 className="text-3xl font-bold text-yellow-900 mb-2">Quiz Complete!</h2>
+            <p className="text-yellow-600 mb-6">Great job on completing the quiz!</p>
             
-            <div className="bg-red-50 rounded-2xl p-6 mb-6 border border-red-100">
+            <div className="bg-yellow-50 rounded-2xl p-6 mb-6 border border-yellow-200">
               <div className="text-5xl font-bold text-yellow-600 mb-2">{percentage}%</div>
-              <div className="text-red-700 font-medium">
+              <div className="text-yellow-700 font-medium">
                 {score} out of {quizQuestions.length} correct
               </div>
             </div>
@@ -133,14 +133,14 @@ const Quiz: React.FC<QuizProps> = ({ words, learnedIds, onClose }) => {
             <div className="flex gap-3">
               <button
                 onClick={handleRestart}
-                className="flex-1 bg-red-100 text-red-700 py-3 rounded-xl font-semibold hover:bg-red-200 transition-colors flex items-center justify-center gap-2"
+                className="flex-1 bg-yellow-100 text-yellow-700 py-3 rounded-xl font-semibold hover:bg-yellow-200 transition-colors flex items-center justify-center gap-2"
               >
                 <RotateCcw size={18} />
                 Retry
               </button>
               <button
                 onClick={onClose}
-                className="flex-1 bg-gradient-to-r from-red-600 to-yellow-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all"
+                className="flex-1 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all"
               >
                 Close
               </button>
@@ -156,48 +156,48 @@ const Quiz: React.FC<QuizProps> = ({ words, learnedIds, onClose }) => {
       <div className="bg-white rounded-3xl p-8 max-w-2xl w-full shadow-2xl">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-yellow-600 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center">
               <Trophy className="text-white" size={20} />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-red-900">Vocabulary Quiz</h2>
-              <p className="text-xs text-red-600">
+              <h2 className="text-xl font-bold text-yellow-900">Vocabulary Quiz</h2>
+              <p className="text-xs text-yellow-600">
                 Question {currentQuestionIndex + 1} of {quizQuestions.length}
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-red-400 hover:text-red-600 transition-colors"
+            className="p-2 text-yellow-400 hover:text-yellow-600 transition-colors"
           >
             <X size={24} />
           </button>
         </div>
 
         <div className="mb-6">
-          <div className="w-full bg-red-100 rounded-full h-2 mb-2">
+          <div className="w-full bg-yellow-100 rounded-full h-2 mb-2">
             <div
-              className="bg-gradient-to-r from-red-600 to-yellow-600 h-2 rounded-full transition-all duration-300"
+              className="bg-gradient-to-r from-yellow-500 to-yellow-600 h-2 rounded-full transition-all duration-300"
               style={{ width: `${((currentQuestionIndex + 1) / quizQuestions.length) * 100}%` }}
             />
           </div>
-          <div className="text-right text-xs text-red-700 font-medium">
+          <div className="text-right text-xs text-yellow-700 font-medium">
             Score: {score}/{quizQuestions.length}
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-red-50 to-yellow-50 rounded-2xl p-8 mb-6 text-center border border-red-200">
-          <p className="text-sm text-red-600 mb-3 uppercase tracking-wider font-bold">
+        <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 mb-6 text-center border border-yellow-300">
+          <p className="text-sm text-yellow-600 mb-3 uppercase tracking-wider font-bold">
             What does this mean?
           </p>
-          <div className="text-6xl font-bold spanish-font text-red-900 mb-3 cursor-pointer hover:text-red-700 transition-colors" onClick={() => speak(currentQuestion.word.spanish)}>
+          <div className="text-6xl font-bold spanish-font text-yellow-900 mb-3 cursor-pointer hover:text-yellow-700 transition-colors" onClick={() => speak(currentQuestion.word.spanish)}>
             {currentQuestion.word.spanish}
           </div>
           <div className="text-lg text-yellow-600 font-medium mb-1">
             {currentQuestion.word.transliteration}
           </div>
           {currentQuestion.word.malaysian && (
-            <div className="text-sm text-red-500 italic mb-3">
+            <div className="text-sm text-yellow-600 italic mb-3">
               MY: {currentQuestion.word.malaysian}
             </div>
           )}
@@ -218,12 +218,12 @@ const Quiz: React.FC<QuizProps> = ({ words, learnedIds, onClose }) => {
             let buttonClass = 'w-full p-4 rounded-xl border-2 font-semibold text-left transition-all ';
             
             if (!isAnswered) {
-              buttonClass += 'border-red-200 bg-white hover:border-red-400 hover:bg-red-50 text-red-800';
+              buttonClass += 'border-yellow-200 bg-white hover:border-yellow-400 hover:bg-yellow-50 text-yellow-800';
             } else {
               if (isCorrect) {
-                buttonClass += 'border-red-500 bg-red-50 text-red-700';
+                buttonClass += 'border-yellow-500 bg-yellow-50 text-yellow-700';
               } else if (isSelected && !isCorrect) {
-                buttonClass += 'border-red-500 bg-red-50 text-red-700';
+                buttonClass += 'border-yellow-500 bg-yellow-50 text-yellow-700';
               } else {
                 buttonClass += 'border-gray-200 bg-gray-50 text-gray-500';
               }
@@ -242,7 +242,7 @@ const Quiz: React.FC<QuizProps> = ({ words, learnedIds, onClose }) => {
                     <CheckCircle className="text-green-500" size={20} />
                   )}
                   {isAnswered && isSelected && !isCorrect && (
-                    <XCircle className="text-red-500" size={20} />
+                    <XCircle className="text-yellow-500" size={20} />
                   )}
                 </div>
               </button>
@@ -253,7 +253,7 @@ const Quiz: React.FC<QuizProps> = ({ words, learnedIds, onClose }) => {
         {isAnswered && (
           <button
             onClick={handleNext}
-            className="w-full bg-gradient-to-r from-red-600 to-yellow-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
           >
             {currentQuestionIndex < quizQuestions.length - 1 ? (
               <>

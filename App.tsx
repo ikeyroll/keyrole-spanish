@@ -78,24 +78,24 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-gradient-to-r from-red-50 to-yellow-50 backdrop-blur-md border-b border-red-200 px-6 py-4">
+      <header className="sticky top-0 z-30 bg-gradient-to-r from-yellow-50 to-yellow-100 backdrop-blur-md border-b border-yellow-300 px-6 py-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-300">
+            <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg shadow-yellow-300">
               <GraduationCap className="text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-red-900 tracking-tight">Key-Role Vocab</h1>
-              <p className="text-xs text-red-700 font-medium">500 Core Spanish Essentials</p>
+              <h1 className="text-xl font-bold text-yellow-900 tracking-tight">Key-Role Vocab</h1>
+              <p className="text-xs text-yellow-800 font-medium">500 Core Spanish Essentials</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 bg-white/80 p-1.5 rounded-2xl border border-red-200 flex-1 md:max-w-md">
-            <Search className="text-red-500 ml-2" size={18} />
+          <div className="flex items-center gap-3 bg-white/80 p-1.5 rounded-2xl border border-yellow-300 flex-1 md:max-w-md">
+            <Search className="text-yellow-600 ml-2" size={18} />
             <input 
               type="text" 
               placeholder="Search Spanish, Pronunciation or Meaning..." 
-              className="bg-transparent border-none outline-none text-sm w-full py-1 text-red-900"
+              className="bg-transparent border-none outline-none text-sm w-full py-1 text-yellow-900"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -103,7 +103,7 @@ const App: React.FC = () => {
 
           <div className="flex items-center gap-3">
              <div className="flex flex-col items-end lg:hidden">
-                <span className="text-xs text-red-700 font-semibold">{learnedCount}/{totalCount}</span>
+                <span className="text-xs text-yellow-700 font-semibold">{learnedCount}/{totalCount}</span>
              </div>
              <div className="w-12 h-12 rounded-full border-4 border-yellow-100 relative flex items-center justify-center">
                 <svg className="absolute w-full h-full -rotate-90">
@@ -117,24 +117,24 @@ const App: React.FC = () => {
                     strokeDashoffset={126 - (126 * progressPercent / 100)}
                   />
                 </svg>
-                <span className="text-[10px] font-bold text-red-800">{progressPercent}%</span>
+                <span className="text-[10px] font-bold text-yellow-800">{progressPercent}%</span>
              </div>
              <button
                onClick={() => setShowQuiz(true)}
-               className="md:hidden w-10 h-10 bg-gradient-to-r from-red-600 to-yellow-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center"
+               className="md:hidden w-10 h-10 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center"
              >
                <Brain size={18} />
              </button>
              <button
                onClick={() => setShowQuiz(true)}
-               className="hidden md:flex items-center gap-2 bg-gradient-to-r from-red-600 to-yellow-600 text-white px-4 py-2 rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105"
+               className="hidden md:flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-4 py-2 rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105"
              >
                <Brain size={18} />
                Quiz Me
              </button>
              <div className="hidden lg:flex flex-col items-end">
-                <span className="text-xs text-red-600 font-bold uppercase">Progress</span>
-                <span className="text-sm font-bold text-red-900">{learnedCount} / {totalCount} words</span>
+                <span className="text-xs text-yellow-600 font-bold uppercase">Progress</span>
+                <span className="text-sm font-bold text-yellow-900">{learnedCount} / {totalCount} words</span>
              </div>
           </div>
         </div>
@@ -143,10 +143,10 @@ const App: React.FC = () => {
       <main className="flex-1 max-w-7xl mx-auto w-full px-6 py-8">
         
         {/* Welcome Section */}
-        <section className="mb-10 bg-gradient-to-br from-red-600 via-yellow-600 to-red-700 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl shadow-red-200">
+        <section className="mb-10 bg-gradient-to-br from-yellow-500 via-yellow-600 to-yellow-700 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl shadow-yellow-200">
           <div className="relative z-10 max-w-2xl">
             <h2 className="text-3xl font-bold mb-2">Master Spanish Vocabulary</h2>
-            <p className="text-red-50 opacity-90 mb-6">Track your progress, use AI-powered mnemonics, and conquer the first 500 essential words of the Spanish language.</p>
+            <p className="text-yellow-50 opacity-90 mb-6">Track your progress, use AI-powered mnemonics, and conquer the first 500 essential words of the Spanish language.</p>
             <div className="flex flex-wrap gap-4">
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl px-5 py-3 flex items-center gap-3 border border-yellow-300/30">
                 <Trophy className="text-yellow-300" size={24} />
@@ -188,8 +188,8 @@ const App: React.FC = () => {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap ${
                   activeCategory === cat 
-                    ? 'bg-gradient-to-r from-red-600 to-yellow-600 text-white shadow-lg shadow-red-200' 
-                    : 'bg-white text-red-700 hover:bg-red-50 border border-red-200'
+                    ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-white shadow-lg shadow-yellow-200' 
+                    : 'bg-white text-yellow-700 hover:bg-yellow-50 border border-yellow-300'
                 }`}
               >
                 {cat}
@@ -197,16 +197,16 @@ const App: React.FC = () => {
             ))}
           </div>
 
-          <div className="flex items-center bg-white border border-red-200 p-1 rounded-xl shadow-sm">
+          <div className="flex items-center bg-white border border-yellow-300 p-1 rounded-xl shadow-sm">
             <button 
               onClick={() => setViewMode('grid')}
-              className={`p-2 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-red-100 text-red-900' : 'text-red-400'}`}
+              className={`p-2 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-yellow-100 text-yellow-900' : 'text-yellow-400'}`}
             >
               <Grid size={20} />
             </button>
             <button 
               onClick={() => setViewMode('list')}
-              className={`p-2 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-red-100 text-red-900' : 'text-red-400'}`}
+              className={`p-2 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-yellow-100 text-yellow-900' : 'text-yellow-400'}`}
             >
               <List size={20} />
             </button>
@@ -230,14 +230,14 @@ const App: React.FC = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            <div className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mb-4">
-              <Search className="text-red-300" size={40} />
+            <div className="w-20 h-20 bg-yellow-50 rounded-full flex items-center justify-center mb-4">
+              <Search className="text-yellow-300" size={40} />
             </div>
-            <h3 className="text-xl font-bold text-red-900">No words found</h3>
-            <p className="text-red-600 mt-2">Try adjusting your search or category filter.</p>
+            <h3 className="text-xl font-bold text-yellow-900">No words found</h3>
+            <p className="text-yellow-600 mt-2">Try adjusting your search or category filter.</p>
             <button 
               onClick={() => {setSearch(''); setActiveCategory('All');}}
-              className="mt-6 text-red-600 font-bold hover:underline"
+              className="mt-6 text-yellow-600 font-bold hover:underline"
             >
               Clear all filters
             </button>
@@ -246,11 +246,11 @@ const App: React.FC = () => {
       </main>
 
       {/* Footer / Mobile Nav (Optional) */}
-      <footer className="bg-gradient-to-r from-red-50 to-yellow-50 border-t border-red-200 py-10">
+      <footer className="bg-gradient-to-r from-yellow-50 to-yellow-100 border-t border-yellow-300 py-10">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-red-600 text-sm">Made with ❤️ for Spanish learners</p>
+          <p className="text-yellow-600 text-sm">Made with ❤️ for Spanish learners</p>
           <div className="flex items-center justify-center gap-6 mt-4 opacity-70">
-             <span className="text-xs font-bold uppercase tracking-widest text-red-700">Spanish Vocab v1.0</span>
+             <span className="text-xs font-bold uppercase tracking-widest text-yellow-700">Spanish Vocab v1.0</span>
           </div>
         </div>
       </footer>
